@@ -1,15 +1,23 @@
-const { watch } = require("gulp");
+const { watch, dest, src, series, parallel } = require("gulp");
 const browserSync = require("browser-sync").create();
+const sass = require("gulp-sass")(require("sass"));
 
 const path = {
     root: ".",
     htmlncss: "./dist"
 }
 
+const cssSass = (done) => {
+    src("./src/sass/app.scss")
+    .pipe(sass())
+    .pipe(dest("./dist"));
+    done();
+}
+
 const BuildServer = () => {
     browserSync.init({
         server: {
-            baseDir: "./dist",
+            baseDir: "dist",
             index: "index.html"
         }
     });
@@ -20,10 +28,15 @@ const reload = (done) => {
     done();
 }
 
-watch("./dist/*.html", reload);
-watch("./dist/*.css", reload);
+const watchTask = () => {
+    watch("./src/sass/app.scss", cssSass);
+    watch("./dist/*.html", reload);
+    watch("./dist/app.css", reload);
+}
 
 exports.default = () => {
+    // cssSass();
     BuildServer();
+    watchTask();
 }
 
