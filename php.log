@@ -1,0 +1,7 @@
+[11-Jul-2021 01:02:12 Asia/Tokyo] error test
+[11-Jul-2021 01:02:28 Asia/Tokyo] error test
+[11-Jul-2021 01:02:28 Asia/Tokyo] err: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+[11-Jul-2021 01:05:25 Asia/Tokyo] error test
+[11-Jul-2021 01:05:26 Asia/Tokyo] error test
+[11-Jul-2021 01:05:26 Asia/Tokyo] err: SQLSTATE[HY000] [1049] Unknown database 'chat'
+[11-Jul-2021 01:12:32 Asia/Tokyo] error test

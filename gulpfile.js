@@ -7,12 +7,12 @@ const path = {
     htmlncss: "./dist"
 }
 
-const cssSass = (done) => {
-    src("./src/sass/app.scss")
-    .pipe(sass())
-    .pipe(dest("./dist"));
-    done();
-}
+// const cssSass = (done) => {
+//     src("./src/sass/app.scss")
+//     .pipe(sass())
+//     .pipe(dest("./dist"));
+//     done();
+// }
 
 const BuildServer = () => {
     browserSync.init({
@@ -29,8 +29,8 @@ const reload = (done) => {
 }
 
 const watchTask = () => {
-    watch("./src/sass/app.scss", cssSass);
-    watch("./dist/*.html", reload);
+    // watch("./src/sass/app.scss", cssSass);
+    watch("./dist/index.html", reload);
     watch("./dist/app.css", reload);
 }
 
