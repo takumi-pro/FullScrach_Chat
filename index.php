@@ -1,5 +1,9 @@
 <?php
 require("./db.php");
+// debug($err_msg["email"]);
+if(!empty($err_msg["first_name"])){
+    debug($err_msg["first_name"]);
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,38 +23,44 @@ require("./db.php");
         <section class="form signup">
             <header class="header">TIPS</header>
             <form id="form" action="">
-                <div class="error-txt">This is error message!!</div>
-                <div class="name-area">
+                <div class="error-txt"></div>
+                <div class="name-area flex">
                     <div class="field">
-                        <label for="first_name">First Name</label>
+                        <label>First Name</label>
                         <input id="first_name" name="first_name" type="text" placeholder="First Name">
+                        <span class="error-txt firstname_err"></span>
                     </div>
                     <div class="field">
-                        <label for="last_name">Last Name</label>
+                        <label>Last Name</label>
                         <input id="last_name" name="last_name" type="text" placeholder="Last Name">
+                        <span class="error-txt lastname_err"></span>
                     </div>
                 </div>
                 <div class="field">
-                    <label for="email">Email Adress</label>
+                    <label>Email Adress</label>
                     <input id="email" name="email" type="text" placeholder="email">
+                    <span class="error-txt email_err"></span>
                 </div>
                 <div class="field">
-                    <label for="password">Password</label>
+                    <label>Password</label>
                     <input id="password" name="password" type="password" placeholder="password">
+                    <span class="error-txt pass_err"></span>
+                    <!-- <i class="fas fa-eye eye"></i> -->
                 </div>
-                <!-- <div class="field">
-                    <label>Select Image</label>
-                    <input name="file" type="file" >
-                </div> -->
                 <div class="field">
                     <input class="btn" type="submit" value="Sign Up">
                 </div>
-                <p>Already signed up? <a href="#">Login</a></p>
+                <p class="toSignup">Already signed up? <a href="#">Login</a></p>
             </form>
         </section>
     </div>
     <script>
     const form = document.querySelector("#form");
+    const errTxt = document.querySelector(".error-txt");
+    const firstnameErr = document.querySelector(".firstname_err");
+    const lastnameErr = document.querySelector(".lastname_err");
+    const emailErr = document.querySelector(".email_err");
+    const passErr = document.querySelector(".pass_err");
     const firstName = document.querySelector("#first_name");
     const lastName = document.querySelector("#last_name");
     const email = document.querySelector("#email");
@@ -59,24 +69,14 @@ require("./db.php");
 
     form.onsubmit = (e) => {
         e.preventDefault();
-        console.log("submit");
     }
 
     btn.onclick = (e) => {
-        console.log("click");
-
-        const firstNameValue = firstName.value;
-        const lastNameValue = lastName.value;
-        const emailValue = email.value;
-        const passValue = pass.value;
-
         const obj = {};
         const formData = new FormData(form);
-        // formData.append("name", "takumi");
-        console.log(formData);
+
         formData.forEach((value, key) => obj[key] = value);
         const jsonFormData = JSON.stringify(obj);
-        console.log("fetch");
         fetch("http://localhost:8888/Chat/insert.php", {
             method: "POST",
             mode: "cors",
@@ -85,7 +85,18 @@ require("./db.php");
             },
             body: jsonFormData
         }).then((res) => {
-            console.log("su");
+            return res.json();
+        }).then((json) => {
+            if (Object.keys(json).length === 0) {
+                window.location.href = "home.php";
+            } else {
+                errTxt.style.display = "block";
+                firstnameErr.textContent = json.first_name;
+                lastnameErr.textContent = json.last_name;
+                emailErr.textContent = json.email;
+                passErr.textContent = json.password;
+                errTxt.textContent = json.common;
+            }
         }).catch((err) => {
             console.log(err);
         });
