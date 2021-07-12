@@ -14,7 +14,7 @@ if(!empty($err_msg["first_name"])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
         integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
-    <link rel="stylesheet" href="./app.css">
+    <!-- <link rel="stylesheet" href="./app.css"> -->
     <title>TIPS</title>
 </head>
 
@@ -54,54 +54,7 @@ if(!empty($err_msg["first_name"])){
             </form>
         </section>
     </div>
-    <script>
-    const form = document.querySelector("#form");
-    const errTxt = document.querySelector(".error-txt");
-    const firstnameErr = document.querySelector(".firstname_err");
-    const lastnameErr = document.querySelector(".lastname_err");
-    const emailErr = document.querySelector(".email_err");
-    const passErr = document.querySelector(".pass_err");
-    const firstName = document.querySelector("#first_name");
-    const lastName = document.querySelector("#last_name");
-    const email = document.querySelector("#email");
-    const pass = document.querySelector("#password");
-    const btn = document.querySelector(".btn");
-
-    form.onsubmit = (e) => {
-        e.preventDefault();
-    }
-
-    btn.onclick = (e) => {
-        const obj = {};
-        const formData = new FormData(form);
-
-        formData.forEach((value, key) => obj[key] = value);
-        const jsonFormData = JSON.stringify(obj);
-        fetch("http://localhost:8888/Chat/insert.php", {
-            method: "POST",
-            mode: "cors",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: jsonFormData
-        }).then((res) => {
-            return res.json();
-        }).then((json) => {
-            if (Object.keys(json).length === 0) {
-                window.location.href = "home.php";
-            } else {
-                errTxt.style.display = "block";
-                firstnameErr.textContent = json.first_name;
-                lastnameErr.textContent = json.last_name;
-                emailErr.textContent = json.email;
-                passErr.textContent = json.password;
-                errTxt.textContent = json.common;
-            }
-        }).catch((err) => {
-            console.log(err);
-        });
-    }
-    </script>
+    <script src="./dist/bundle.js"></script>
 </body>
 
 </html>
