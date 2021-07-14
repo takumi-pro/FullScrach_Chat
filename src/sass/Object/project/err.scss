@@ -1,0 +1,6 @@
+@use "../../Foundation/color";
+
+.p-error-txt {
+    color: color.$err-text;
+    font-size: color.$font-size09;
+}

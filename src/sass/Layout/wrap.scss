@@ -1,1 +1,8 @@
+@use "../Foundation/color";
 
+.l-wrap {
+    background-color: #fff;
+    width: 450px;
+    border-radius: 16px;
+    box-shadow: color.$shadow;
+}
