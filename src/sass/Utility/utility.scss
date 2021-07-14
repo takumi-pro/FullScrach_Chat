@@ -1,0 +1,38 @@
+@use "../Foundation/color";
+
+.my-10 {
+    margin: 10px 0;
+}
+.my-20 {
+    margin: 20px 0;
+}
+.mx-10 {
+    margin: 0 10px;
+}
+.mb-10 {
+    margin-bottom: 10px;
+}
+.mb-20 {
+    margin-bottom: 20px;
+}
+.pb-20 {
+    padding-bottom: 20px;
+}
+
+.flex {
+    display: flex;
+}
+.between {
+    justify-content: space-between;
+}
+.rel {
+    position: relative;
+}
+.eye {
+    position: absolute;
+    right: 15px;
+    top: 70%;
+    color: #ccc;
+    transform: translateY(-50%);
+    cursor: pointer;
+}

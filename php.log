@@ -1,7 +1,35 @@
-[11-Jul-2021 01:02:12 Asia/Tokyo] error test
-[11-Jul-2021 01:02:28 Asia/Tokyo] error test
-[11-Jul-2021 01:02:28 Asia/Tokyo] err: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
-[11-Jul-2021 01:05:25 Asia/Tokyo] error test
-[11-Jul-2021 01:05:26 Asia/Tokyo] error test
-[11-Jul-2021 01:05:26 Asia/Tokyo] err: SQLSTATE[HY000] [1049] Unknown database 'chat'
-[11-Jul-2021 01:12:32 Asia/Tokyo] error test
+[11-Jul-2021 16:50:10 Asia/Tokyo] debug: post
+[11-Jul-2021 16:50:16 Asia/Tokyo] debug: post
+[11-Jul-2021 16:50:16 Asia/Tokyo] debug: dbconnect
+[11-Jul-2021 16:50:16 Asia/Tokyo] debug: query succes
+[11-Jul-2021 16:52:57 Asia/Tokyo] debug: post
+[11-Jul-2021 16:53:02 Asia/Tokyo] debug: post
+[11-Jul-2021 16:53:18 Asia/Tokyo] debug: post
+[11-Jul-2021 16:53:30 Asia/Tokyo] debug: post
+[11-Jul-2021 16:53:41 Asia/Tokyo] debug: post
+[11-Jul-2021 16:54:18 Asia/Tokyo] debug: post
+[11-Jul-2021 16:54:18 Asia/Tokyo] debug: dbconnect
+[11-Jul-2021 16:54:18 Asia/Tokyo] debug: query failed
+[11-Jul-2021 16:54:52 Asia/Tokyo] debug: post
+[11-Jul-2021 16:55:12 Asia/Tokyo] debug: post
+[11-Jul-2021 16:55:36 Asia/Tokyo] debug: post
+[11-Jul-2021 16:55:36 Asia/Tokyo] debug: dbconnect
+[11-Jul-2021 16:55:36 Asia/Tokyo] debug: query failed
+[11-Jul-2021 16:57:56 Asia/Tokyo] debug: post
+[11-Jul-2021 16:58:02 Asia/Tokyo] debug: post
+[11-Jul-2021 16:58:02 Asia/Tokyo] debug: dbconnect
+[11-Jul-2021 16:58:02 Asia/Tokyo] debug: query failed
+[11-Jul-2021 17:01:15 Asia/Tokyo] debug: post
+[11-Jul-2021 17:13:46 Asia/Tokyo] debug: post
+[11-Jul-2021 17:14:20 Asia/Tokyo] debug: post
+[11-Jul-2021 17:14:38 Asia/Tokyo] debug: post
+[11-Jul-2021 17:14:41 Asia/Tokyo] debug: post
+[11-Jul-2021 17:15:08 Asia/Tokyo] debug: post
+[11-Jul-2021 17:15:08 Asia/Tokyo] debug: dbconnect
+[11-Jul-2021 17:15:08 Asia/Tokyo] debug: query failed
+[11-Jul-2021 17:24:56 Asia/Tokyo] debug: post
+[11-Jul-2021 17:28:26 Asia/Tokyo] debug: post
+[11-Jul-2021 17:31:04 Asia/Tokyo] debug: post
+[12-Jul-2021 12:47:53 Asia/Tokyo] debug: post
+[12-Jul-2021 23:44:18 Asia/Tokyo] debug: post
+[12-Jul-2021 23:58:12 Asia/Tokyo] debug: post

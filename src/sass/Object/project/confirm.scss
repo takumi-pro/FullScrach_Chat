@@ -1,0 +1,10 @@
+@use "../../Foundation/color";
+
+.p-confirm-txt {
+    text-align: center;
+    color: color.$font-color555;
+    a {
+        color: color.$font-color666;
+        text-decoration: underline;
+    }
+}
